@@ -4,11 +4,11 @@
 # git clone https://github.com/raspberrypi/firmware.git
 # cd firmware/boot
 # tar cJvf ../bcm283x-firmware-%{gitshort}.tar.xz *bin *dat *elf LICENCE.broadcom overlays/README
-%define gitshort 37600d5
+%define gitshort fc6c989
 
 Name:          bcm283x-firmware
-Version:       20150615
-Release:       3.%{gitshort}%{?dist}
+Version:       20150617
+Release:       1.%{gitshort}%{?dist}
 Summary:       Broadcom bcm283x firmware for the Raspberry Pi
 
 Group:         System Environment/Kernel
@@ -16,6 +16,7 @@ Group:         System Environment/Kernel
 License:       Redistributable, no modification permitted
 URL:           https://github.com/raspberrypi/
 Source0:       %{name}-%{gitshort}.tar.xz
+Source1:       config.txt
 ExclusiveArch: %{arm}
 
 %description
@@ -30,6 +31,7 @@ Raspberry Pi.
 %install
 mkdir -p %{buildroot}/%{_datadir}/%{name}
 mkdir -p %{buildroot}/%{_datadir}/%{name}/overlays
+install -p %{SOURCE1} %{buildroot}/%{_datadir}/%{name}
 install -p *bin %{buildroot}/%{_datadir}/%{name}
 install -p *dat %{buildroot}/%{_datadir}/%{name}
 install -p *elf %{buildroot}/%{_datadir}/%{name}
@@ -40,6 +42,10 @@ install -p overlays/README %{buildroot}/%{_datadir}/%{name}/overlays
 %{_datadir}/%{name}
 
 %changelog
+* Fri Jun 19 2015 Peter Robinson <pbrobinson@fedoraproject.org> 20150617-1.fc6c989
+- Latest firmware update
+- Add default config.txt
+
 * Thu Jun 18 2015 Peter Robinson <pbrobinson@fedoraproject.org> 20150615-3.37600d5
 - Fix license field
 

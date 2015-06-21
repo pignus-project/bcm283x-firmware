@@ -129,3 +129,5 @@
 #over_voltage=6
 
 gpu_mem=64
+kernel=u-boot.bin
+boot_delay=1

@@ -46,6 +46,10 @@ install -p overlays/README %{buildroot}/%{_datadir}/%{name}/overlays
 %{_datadir}/%{name}
 
 %changelog
+* Sun Jun 21 2015 Peter Robinson <pbrobinson@fedoraproject.org> 2015-619-1.8b9d7b8
+- Latest firmware update
+- update config.txt for default kernel name
+
 * Fri Jun 19 2015 Peter Robinson <pbrobinson@fedoraproject.org> 20150617-2.fc6c989
 - Add cmdline.txt, update config.txt
 

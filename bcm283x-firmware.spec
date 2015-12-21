@@ -1,4 +1,4 @@
-global debug_package %{nil}
+%global debug_package %{nil}
 
 # Tarfile created using git 		
 # git clone https://github.com/raspberrypi/firmware.git

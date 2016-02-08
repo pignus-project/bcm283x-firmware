@@ -4,7 +4,7 @@
 # git clone https://github.com/raspberrypi/firmware.git
 # cd firmware/boot
 # tar cJvf ../bcm283x-firmware-%{gitshort}.tar.xz *bin *dat *elf LICENCE.broadcom overlays/README
-%define gitshort 1efc1ec
+%define gitshort cb2ffaa
 
 Name:          bcm283x-firmware
 Version:       20151219
@@ -46,6 +46,9 @@ install -p overlays/README %{buildroot}/%{_datadir}/%{name}/overlays
 %{_datadir}/%{name}
 
 %changelog
+* Mon Feb  8 2016 Peter Robinson <pbrobinson@fedoraproject.org> 20160201-1.cb2ffaa
+- Latest firmware update
+
 * Wed Feb 03 2016 Fedora Release Engineering <releng@fedoraproject.org> - 20151219-2.1efc1ec
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_24_Mass_Rebuild
 

@@ -1,23 +1,24 @@
-# Default Fedora configs for all Raspberry Pi revisions
-
-gpu_mem=64
-boot_delay=1
-
+# Raspberry Pi 2
 # Comment this out for Rasberry Pi 3
 kernel=rpi2-u-boot.bin
 
 # Rasberry Pi 3 _ONLY_. Uncomment these for booting a RPi3. See notes for each option
-
 # kernel=rpi3-u-boot.bin
-# Only enable the uart if you're using a serial console, slows speed
-# enable_uart=1
 
 # End of Rasberry Pi 3 options
 
-# Below are other options you can adjust
+# ^^^^^^^^^ shouldn't need to edit below here ^^^^^^^^^^^^^^^^^^^^
+
+# Default Fedora configs for all Raspberry Pi Revisions
+
+gpu_mem=64
+boot_delay=1
+
+# Below are other options you can adjust for all Raspberry Pi Revisions
 
 # All options documented at http://elinux.org/RPiconfig
-#
+# for more options see http://elinux.org/RPi_config.txt
+
 # Uncomment some or all of these to enable the optional hardware interfaces
 # Params:
 #         i2c_arm                  Set to "on" to enable the ARM's i2c interface
@@ -111,8 +112,6 @@ kernel=rpi2-u-boot.bin
 
 # Uncomment to overclock the ARM core. 700 MHz is the default.
 #arm_freq=800
-
-# for more options see http://elinux.org/RPi_config.txt
 
 ## Some over clocking settings, governor already set to ondemand
 

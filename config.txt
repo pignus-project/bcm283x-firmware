@@ -11,11 +11,13 @@ kernel=rpi2-u-boot.bin
 
 # Default Fedora configs for all Raspberry Pi Revisions
 
-gpu_mem=64
+# This isn't used by mainline VC4 driver so reduce to lowest supported value
+gpu_mem=16
 boot_delay=1
 
 # Below are other options you can adjust for all Raspberry Pi Revisions
 
+# https://www.raspberrypi.org/documentation/configuration/config-txt.md
 # All options documented at http://elinux.org/RPiconfig
 # for more options see http://elinux.org/RPi_config.txt
 

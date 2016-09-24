@@ -8,7 +8,7 @@
 
 Name:          bcm283x-firmware
 Version:       20160913
-Release:       1.%{gitshort}%{?dist}
+Release:       2.%{gitshort}%{?dist}
 Summary:       Broadcom bcm283x firmware for the Raspberry Pi
 
 Group:         System Environment/Kernel
@@ -46,6 +46,9 @@ install -p overlays/README %{buildroot}/%{_datadir}/%{name}/overlays
 %{_datadir}/%{name}
 
 %changelog
+* Sat Sep 24 2016 Peter Robinson <pbrobinson@fedoraproject.org> 20160913-2.c93fb48
+- Minor config tweaks
+
 * Wed Sep 14 2016 Peter Robinson <pbrobinson@fedoraproject.org> 20160913-1.c93fb48
 - Numerous config enhancements
 - Latest firmware fixes

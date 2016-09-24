@@ -6,15 +6,15 @@ kernel=rpi2-u-boot.bin
 [pi3]
 kernel=rpi3-u-boot.bin
 
+# Default Fedora configs for all Raspberry Pi Revisions
+[all]
+
 # Enable UART
 # Only enable UART if you're going to use it as it has speed implications
 # Serial console is ttyS0 on RPi3 and ttyAMA0 on all other variants
 # u-boot will auto detect serial and pass corrent options to kernel if enabled
 # Details here on speed https://www.raspberrypi.org/forums/viewtopic.php?f=28&t=141195
 # enable_uart=1
-
-# Default Fedora configs for all Raspberry Pi Revisions
-[all]
 
 # This isn't used by mainline VC4 driver so reduce to lowest supported value
 gpu_mem=16

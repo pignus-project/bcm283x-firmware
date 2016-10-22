@@ -6,6 +6,9 @@ kernel=rpi2-u-boot.bin
 [pi3]
 kernel=rpi3-u-boot.bin
 
+# Set UART to 48MHz for bluetooth (default is 3000000)
+init_uart_clock=48000000
+
 # Default Fedora configs for all Raspberry Pi Revisions
 [all]
 

@@ -4,10 +4,10 @@
 # git clone https://github.com/raspberrypi/firmware.git
 # cd firmware/boot
 # tar cJvf ../bcm283x-firmware-%{gitshort}.tar.xz *bin *dat *elf LICENCE.broadcom overlays/README
-%define gitshort 72b44d8
+%define gitshort db5fd5e
 
 Name:          bcm283x-firmware
-Version:       20170131
+Version:       20170208
 Release:       1.%{gitshort}%{?dist}
 Summary:       Broadcom bcm283x firmware for the Raspberry Pi
 
@@ -46,6 +46,9 @@ install -p overlays/README %{buildroot}/%{_datadir}/%{name}/overlays
 %{_datadir}/%{name}
 
 %changelog
+* Thu Feb  9 2017 Peter Robinson <pbrobinson@fedoraproject.org> 20170208-1.db5fd5e
+- Latest firmware fixes
+
 * Thu Feb  2 2017 Peter Robinson <pbrobinson@fedoraproject.org> 20170131-1.72b44d8
 - Latest firmware fixes
 

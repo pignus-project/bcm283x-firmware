@@ -8,7 +8,7 @@
 
 Name:          bcm283x-firmware
 Version:       20170314
-Release:       1.%{gitshort}%{?dist}
+Release:       2.%{gitshort}%{?dist}
 Summary:       Broadcom bcm283x firmware for the Raspberry Pi
 
 Group:         System Environment/Kernel
@@ -50,6 +50,9 @@ install -p %{SOURCE3} %{buildroot}/%{_sysconfdir}/dracut.conf.d/
 %{_sysconfdir}/dracut.conf.d/bcm283x.conf
 
 %changelog
+* Tue Mar 14 2017 Peter Robinson <pbrobinson@fedoraproject.org> 20170314-2.509beaa
+- Add bcm2835_dma to initrd list
+
 * Tue Mar 14 2017 Peter Robinson <pbrobinson@fedoraproject.org> 20170314-1.509beaa
 - Latest firmware fixes
 - Transition mechanism for MMC changes

@@ -4,10 +4,10 @@
 # git clone https://github.com/raspberrypi/firmware.git
 # cd firmware/boot
 # tar cJvf ../bcm283x-firmware-%{gitshort}.tar.xz *bin *dat *elf LICENCE.broadcom overlays/README
-%define gitshort db5fd5e
+%define gitshort 509beaa
 
 Name:          bcm283x-firmware
-Version:       20170208
+Version:       20170314
 Release:       1.%{gitshort}%{?dist}
 Summary:       Broadcom bcm283x firmware for the Raspberry Pi
 
@@ -19,6 +19,7 @@ URL:           https://github.com/raspberrypi/
 Source0:       %{name}-%{gitshort}.tar.xz
 Source1:       config.txt
 Source2:       cmdline.txt
+Source3:       bcm283x.conf
 
 ExclusiveArch: %{arm} aarch64
 
@@ -34,18 +35,25 @@ Raspberry Pi.
 %install
 mkdir -p %{buildroot}/%{_datadir}/%{name}
 mkdir -p %{buildroot}/%{_datadir}/%{name}/overlays
+mkdir -p %{buildroot}/%{_sysconfdir}/dracut.conf.d
 install -p %{SOURCE1} %{buildroot}/%{_datadir}/%{name}
 install -p %{SOURCE2} %{buildroot}/%{_datadir}/%{name}
 install -p *bin %{buildroot}/%{_datadir}/%{name}
 install -p *dat %{buildroot}/%{_datadir}/%{name}
 install -p *elf %{buildroot}/%{_datadir}/%{name}
 install -p overlays/README %{buildroot}/%{_datadir}/%{name}/overlays
+install -p %{SOURCE3} %{buildroot}/%{_sysconfdir}/dracut.conf.d/
 
 %files
 %license LICENCE.broadcom
 %{_datadir}/%{name}
+%{_sysconfdir}/dracut.conf.d/bcm283x.conf
 
 %changelog
+* Tue Mar 14 2017 Peter Robinson <pbrobinson@fedoraproject.org> 20170314-1.509beaa
+- Latest firmware fixes
+- Transition mechanism for MMC changes
+
 * Thu Feb  9 2017 Peter Robinson <pbrobinson@fedoraproject.org> 20170208-1.db5fd5e
 - Latest firmware fixes
 

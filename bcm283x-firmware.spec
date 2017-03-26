@@ -4,11 +4,11 @@
 # git clone https://github.com/raspberrypi/firmware.git
 # cd firmware/boot
 # tar cJvf ../bcm283x-firmware-%{gitshort}.tar.xz *bin *dat *elf LICENCE.broadcom overlays/README
-%define gitshort 509beaa
+%define gitshort 76fc4dd
 
 Name:          bcm283x-firmware
-Version:       20170314
-Release:       2.%{gitshort}%{?dist}
+Version:       20170324
+Release:       1.%{gitshort}%{?dist}
 Summary:       Broadcom bcm283x firmware for the Raspberry Pi
 
 Group:         System Environment/Kernel
@@ -50,6 +50,10 @@ install -p %{SOURCE3} %{buildroot}/%{_sysconfdir}/dracut.conf.d/
 %{_sysconfdir}/dracut.conf.d/bcm283x.conf
 
 %changelog
+* Sun Mar 26 2017 Peter Robinson <pbrobinson@fedoraproject.org> 20170324-1.76fc4dd
+- Drop bcm2835_dma from initrd, it's too unstable
+- Latest firmware fixes
+
 * Tue Mar 14 2017 Peter Robinson <pbrobinson@fedoraproject.org> 20170314-2.509beaa
 - Add bcm2835_dma to initrd list
 

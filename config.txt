@@ -1,3 +1,11 @@
+# Raspberry Pi Zero
+[pi0]
+kernel=rpi-u-boot.bin
+
+# Raspberry Pi 1
+[pi1]
+kernel=rpi-u-boot.bin
+
 # Raspberry Pi 2
 [pi2]
 kernel=rpi2-u-boot.bin

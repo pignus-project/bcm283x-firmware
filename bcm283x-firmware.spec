@@ -8,7 +8,7 @@
 
 Name:          bcm283x-firmware
 Version:       20170324
-Release:       1.%{gitshort}%{?dist}
+Release:       1.%{gitshort}%{?dist}.pi1
 Summary:       Broadcom bcm283x firmware for the Raspberry Pi
 
 Group:         System Environment/Kernel
@@ -50,6 +50,9 @@ install -p %{SOURCE3} %{buildroot}/%{_sysconfdir}/dracut.conf.d/
 %{_sysconfdir}/dracut.conf.d/bcm283x.conf
 
 %changelog
+* Fri Mar 31 2017 Lubomir Rintel <lkundrak@v3.sk> 20170324-1.76fc4dd.pi1
+- Enable Raspberry Pi 1 and Zero U-Boot
+
 * Sun Mar 26 2017 Peter Robinson <pbrobinson@fedoraproject.org> 20170324-1.76fc4dd
 - Drop bcm2835_dma from initrd, it's too unstable
 - Latest firmware fixes
